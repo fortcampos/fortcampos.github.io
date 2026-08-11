@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Fort_Campos - Comércio e Prestação de Serviços. Soluções profissionais para empresas e particulares em Angola.">
+
+    <meta name="keywords"
+        content="Fort_Campos, comércio, prestação de serviços, consultoria, logística, assistência técnica, Angola">
+
+    <meta name="author" content="Fort_Campos">
+
+    <title>Fort_Campos | Comércio & Prestação de Serviços</title>
+
+
+    <!-- =====================================================
+         CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           CABEÇALHO
+        ====================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            background: #003366;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 6%;
+
+            z-index: 1000;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .logo h1 {
+            font-size: 32px;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #4da3ff;
+        }
+
+
+        /* =====================================================
+           MENU MOBILE
+        ====================================================== */
+
+        .menu-toggle {
+            display: none;
+
+            background: transparent;
+            border: none;
+
+            color: white;
+            font-size: 30px;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           BANNER
+        ====================================================== */
+
+        .banner {
+            margin-top: 82px;
+
+            min-height: 85vh;
+
+            background-image:
+                linear-gradient(
+                    rgba(0, 51, 102, 0.20),
+                    rgba(0, 51, 102, 0.20)
+                ),
+                url("./img/banner.jpg.png.png");
+
+            /*
+                DIMINUI O ZOOM DA IMAGEM
+            */
+            background-size: 85% auto;
+
+            background-position: center;
+
+            background-repeat: no-repeat;
+
+            background-color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+        }
+
+        /*
+            O conteúdo abaixo fica por cima do banner.
+            Se a sua imagem já tiver textos incorporados,
+            estes textos podem ser retirados posteriormente.
+        */
+
+        .banner-content {
+            max-width: 850px;
+
+            background: rgba(0, 51, 102, 0.78);
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            color: white;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,0.20);
+        }
+
+        .banner h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .banner p {
+            font-size: 21px;
+            margin-bottom: 30px;
+        }
+
+        .banner-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+
+        /* =====================================================
+           BOTÕES
+        ====================================================== */
+
+        .btn-primary,
+        .btn-whatsapp,
+        .btn-submit {
+            display: inline-block;
+
+            padding: 15px 28px;
+
+            border-radius: 35px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #1e88e5;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1565c0;
+            transform: translateY(-3px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           ESTRUTURA DAS SECÇÕES
+        ====================================================== */
+
+        section {
+            scroll-margin-top: 90px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .section-label {
+            display: block;
+
+            color: #1e88e5;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 40px;
+
+            color: #003366;
+
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 18px;
+            color: #666;
+        }
+
+
+        /* =====================================================
+           SOBRE
+        ====================================================== */
+
+        .sobre {
+            background: white;
+
+            padding: 90px 8%;
+        }
+
+        .sobre-content {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .sobre-texto p {
+            font-size: 18px;
+
+            margin-bottom: 20px;
+
+            line-height: 1.8;
+        }
+
+        .sobre-texto strong {
+            color: #003366;
+        }
+
+        .sobre-destaques {
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .destaque {
+            background: #f5f7fa;
+
+            border-left: 5px solid #1e88e5;
+
+            padding: 22px;
+
+            border-radius: 10px;
+        }
+
+        .destaque strong {
+            display: block;
+
+            color: #003366;
+
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .destaque span {
+            color: #666;
+        }
+
+
+        /* =====================================================
+           SERVIÇOS
+        ====================================================== */
+
+        .servicos {
+            padding: 90px 8%;
+
+            background: #f3f5f8;
+        }
+
+        .cards {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 16px;
+
+            text-align: center;
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 15px 30px rgba(0,0,0,0.13);
+        }
+
+        .card-icon {
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #003366;
+
+            font-size: 22px;
+
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            color: #1e88e5;
+
+            font-weight: bold;
+        }
+
+
+        /* =====================================================
+           VANTAGENS
+        ====================================================== */
+
+        .vantagens {
+            background: #003366;
+
+            color: white;
+
+            padding: 90px 8%;
+        }
+
+        .vantagens .section-label {
+            color: #4da3ff;
+        }
+
+        .vantagens .section-header h2 {
+            color: white;
+        }
+
+        .vantagens-grid {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .vantagem {
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        .vantagem-icon {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: #1e88e5;
+
+            font-size: 25px;
+
+            margin-bottom: 15px;
+        }
+
+        .vantagem h3 {
+            margin-bottom: 10px;
+
+            font-size: 20px;
+        }
+
+        .vantagem p {
+            color: #dbe9f7;
+        }
+
+
+        /* =====================================================
+           CONTACTO
+        ====================================================== */
+
+        .contacto {
+            background: #eceff3;
+
+            padding: 90px 8%;
+        }
+
+        .contacto-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 0.8fr 1.2fr;
+
+            gap: 50px;
+
+            align-items: start;
+        }
+
+        .contacto-info {
+            display: grid;
+
+            gap: 20px;
+        }
+
+        .contacto-item {
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,0.06);
+        }
+
+        .contacto-item > span {
+            font-size: 28px;
+        }
+
+        .contacto-item h3 {
+            color: #003366;
+
+            margin-bottom: 3px;
+        }
+
+        .contacto-item p,
+        .contacto-item a {
+            color: #555;
+        }
+
+        .contacto-item a:hover {
+            color: #1e88e5;
+        }
+
+
+        /* =====================================================
+           FORMULÁRIO
+        ====================================================== */
+
+        .contact-form {
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 16px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-weight: bold;
+
+            margin-bottom: 7px;
+
+            color: #003366;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            outline: none;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #1e88e5;
+
+            box-shadow:
+                0 0 0 3px rgba(30,136,229,0.10);
+        }
+
+        .form-group textarea {
+            height: 150px;
+
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+
+            border: none;
+
+            background: #1e88e5;
+
+            color: white;
+        }
+
+        .btn-submit:hover {
+            background: #1565c0;
+        }
+
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
+        .cta {
+            background:
+                linear-gradient(
+                    135deg,
+                    #1e88e5,
+                    #003366
+                );
+
+            color: white;
+
+            text-align: center;
+
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            font-size: 18px;
+        }
+
+        .cta .btn-primary {
+            background: white;
+
+            color: #003366;
+        }
+
+        .cta .btn-primary:hover {
+            background: #f0f0f0;
+        }
+
+
+        /* =====================================================
+           RODAPÉ
+        ====================================================== */
+
+        footer {
+            background: #00264d;
+
+            color: white;
+
+            padding: 60px 8% 20px;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1.5fr;
+
+            gap: 40px;
+        }
+
+        .footer-brand h2 {
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            color: #c7d7e8;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+        .footer-links a {
+            color: #c7d7e8;
+
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-contact p {
+            color: #c7d7e8;
+
+            margin-bottom: 8px;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.15);
+
+            text-align: center;
+
+            color: #b7c8d8;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           WHATSAPP FLUTUANTE
+        ====================================================== */
+
+        .whatsapp-float {
+            position: fixed;
+
+            right: 25px;
+            bottom: 25px;
+
+            width: 60px;
+            height: 60px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: #25d366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 30px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.25);
+
+            z-index: 999;
+
+            transition: 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+
+            background: #1da851;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 1000px) {
+
+            .cards {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .vantagens-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .banner {
+                background-size: 95% auto;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 13px 20px;
+            }
+
+            .logo h1 {
+                font-size: 26px;
+            }
+
+            .logo span {
+                font-size: 11px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+
+                position: absolute;
+
+                top: 100%;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #003366;
+
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+
+                gap: 0;
+            }
+
+            nav ul li {
+                width: 100%;
+
+                text-align: center;
+
+                padding: 12px 0;
+
+                border-bottom:
+                    1px solid rgba(255,255,255,0.10);
+            }
+
+
+            /* BANNER */
+
+            .banner {
+                margin-top: 72px;
+
+                min-height: 70vh;
+
+                background-size: 100% auto;
+
+                padding: 25px 15px;
+            }
+
+            .banner-content {
+                padding: 25px 18px;
+
+                border-radius: 15px;
+            }
+
+            .banner h2 {
+                font-size: 30px;
+            }
+
+            .banner p {
+                font-size: 17px;
+            }
+
+
+            /* SECÇÕES */
+
+            .sobre,
+            .servicos,
+            .vantagens,
+            .contacto {
+                padding: 65px 6%;
+            }
+
+            .section-header h2 {
+                font-size: 31px;
+            }
+
+
+            /* SERVIÇOS */
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* VANTAGENS */
+
+            .vantagens-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            /* CONTACTO */
+
+            .contact-form {
+                padding: 25px 18px;
+            }
+
+
+            /* FOOTER */
+
+            .footer-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .footer-links {
+                align-items: center;
+            }
+
+
+            /* WHATSAPP */
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+
+                right: 18px;
+                bottom: 18px;
+            }
+
+        }
+
+
+        /* =====================================================
+           RESPONSIVIDADE AVANÇADA — TELEMÓVEL / TABLET
+        ====================================================== */
+
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        button, input, select, textarea {
+            max-width: 100%;
+        }
+
+        /* Computadores/tablets médios */
+        @media (max-width: 1100px) {
+            header {
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            .sobre,
+            .servicos,
+            .vantagens,
+            .contacto {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .banner h2 {
+                font-size: clamp(34px, 5vw, 48px);
+            }
+
+            .cards,
+            .vantagens-grid {
+                gap: 18px;
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 900px) {
+            .banner {
+                min-height: 72vh;
+                background-size: cover;
+            }
+
+            .banner-content {
+                width: min(92%, 760px);
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .vantagens-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sobre-content,
+            .contacto-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* Telemóveis */
+        @media (max-width: 700px) {
+            body {
+                font-size: 15px;
+            }
+
+            header {
+                min-height: 68px;
+                padding: 11px 16px;
+            }
+
+            .logo {
+                min-width: 0;
+                max-width: calc(100% - 55px);
+            }
+
+            .logo h1 {
+                font-size: clamp(22px, 7vw, 28px);
+                white-space: nowrap;
+            }
+
+            .logo span {
+                display: block;
+                max-width: 100%;
+                font-size: 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .menu-toggle {
+                width: 44px;
+                height: 44px;
+                flex: 0 0 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                font-size: 28px;
+                border-radius: 8px;
+            }
+
+            nav {
+                top: 68px;
+                max-height: calc(100vh - 68px);
+                overflow-y: auto;
+                padding: 8px 16px 15px;
+                box-shadow: 0 10px 20px rgba(0,0,0,.18);
+            }
+
+            nav ul {
+                width: 100%;
+            }
+
+            nav ul li {
+                padding: 0;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 13px 10px;
+                font-size: 16px;
+            }
+
+            .banner {
+                margin-top: 68px;
+                min-height: 78vh;
+                padding: 25px 12px;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .banner-content {
+                width: 100%;
+                max-width: 520px;
+                padding: 24px 17px;
+                border-radius: 14px;
+            }
+
+            .banner h2 {
+                font-size: clamp(27px, 8vw, 36px);
+                line-height: 1.15;
+                margin-bottom: 14px;
+            }
+
+            .banner p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 22px;
+            }
+
+            .banner-buttons {
+                width: 100%;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .banner-buttons a,
+            .cta .btn-primary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .btn-primary,
+            .btn-whatsapp,
+            .btn-submit {
+                padding: 14px 20px;
+                min-height: 48px;
+            }
+
+            .sobre,
+            .servicos,
+            .vantagens,
+            .contacto {
+                padding: 58px 5%;
+            }
+
+            .section-header {
+                margin-bottom: 32px;
+            }
+
+            .section-header h2 {
+                font-size: clamp(28px, 8vw, 34px);
+                line-height: 1.2;
+            }
+
+            .section-header p {
+                font-size: 16px;
+            }
+
+            .sobre-texto p {
+                font-size: 16px;
+                line-height: 1.7;
+            }
+
+            .destaque {
+                padding: 18px;
+            }
+
+            .cards,
+            .vantagens-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .card {
+                padding: 28px 20px;
+            }
+
+            .vantagem {
+                padding: 18px 10px;
+            }
+
+            .contacto-container {
+                gap: 28px;
+            }
+
+            .contacto-item {
+                align-items: flex-start;
+                gap: 13px;
+                padding: 16px;
+            }
+
+            .contacto-item > span {
+                flex: 0 0 30px;
+                font-size: 25px;
+            }
+
+            .contacto-item a,
+            .contacto-item p {
+                overflow-wrap: anywhere;
+                word-break: break-word;
+            }
+
+            .contact-form {
+                padding: 22px 16px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px;
+            }
+
+            .cta {
+                padding: 55px 5%;
+            }
+
+            .cta h2 {
+                font-size: clamp(28px, 8vw, 36px);
+                line-height: 1.2;
+            }
+
+            .cta p {
+                font-size: 16px;
+            }
+
+            footer {
+                padding: 45px 5% 18px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-links {
+                align-items: center;
+            }
+
+            .footer-bottom {
+                margin-top: 28px;
+            }
+
+            .footer-bottom p {
+                font-size: 13px;
+                line-height: 1.5;
+            }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                right: 14px;
+                bottom: 14px;
+                font-size: 27px;
+            }
+        }
+
+        /* Telemóveis pequenos */
+        @media (max-width: 420px) {
+            .logo h1 {
+                font-size: 21px;
+            }
+
+            .logo span {
+                font-size: 9px;
+            }
+
+            .banner {
+                min-height: 82vh;
+                padding: 18px 10px;
+            }
+
+            .banner-content {
+                padding: 21px 14px;
+            }
+
+            .banner h2 {
+                font-size: 26px;
+            }
+
+            .banner p {
+                font-size: 15px;
+            }
+
+            .sobre,
+            .servicos,
+            .vantagens,
+            .contacto {
+                padding-left: 4%;
+                padding-right: 4%;
+            }
+
+            .section-header h2 {
+                font-size: 27px;
+            }
+
+            .card h3 {
+                font-size: 20px;
+            }
+
+            .contact-form {
+                padding: 19px 14px;
+            }
+        }
+
+        /* Telemóveis muito pequenos */
+        @media (max-width: 350px) {
+            .logo span {
+                display: none;
+            }
+
+            .banner h2 {
+                font-size: 24px;
+            }
+
+            .btn-primary,
+            .btn-whatsapp,
+            .btn-submit {
+                font-size: 15px;
+                padding-left: 14px;
+                padding-right: 14px;
+            }
+        }
+
+        /* Utilizadores que preferem menos movimento */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            <h1>Fort_Campos</h1>
+
+            <span>
+                Comércio & Prestação de Serviços
+            </span>
+
+        </div>
+
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
+
+            ☰
+
+        </button>
+
+
+        <nav id="navMenu">
+
+            <ul>
+
+                <li>
+                    <a href="#inicio">Início</a>
+                </li>
+
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+
+                <li>
+                    <a href="#servicos">Serviços</a>
+                </li>
+
+                <li>
+                    <a href="#vantagens">Por que nós?</a>
+                </li>
+
+                <li>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         CONTEÚDO
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             BANNER
+        ================================================== -->
+
+        <section
+            class="banner"
+            id="inicio">
+
+            <div class="banner-content">
+
+                <h2>
+                    Soluções Inteligentes
+                    para Empresas e Particulares
+                </h2>
+
+                <p>
+                    Comércio, consultoria, assistência técnica
+                    e soluções logísticas.
+                </p>
+
+                <div class="banner-buttons">
+
+                    <a
+                        href="#contacto"
+                        class="btn-primary">
+
+                        Solicitar Orçamento
+
+                    </a>
+
+                    <a
+                        href="https://wa.me/244946445746"
+                        class="btn-whatsapp"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Falar pelo WhatsApp
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SOBRE
+        ================================================== -->
+
+        <section
+            class="sobre"
+            id="sobre">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    SOBRE NÓS
+                </span>
+
+                <h2>
+                    Quem Somos
+                </h2>
+
+            </div>
+
+
+            <div class="sobre-content">
+
+                <div class="sobre-texto">
+
+                    <p>
+
+                        A <strong>Fort_Campos</strong> dedica-se
+                        ao comércio e à prestação de serviços,
+                        oferecendo soluções profissionais para
+                        empresas e particulares.
+
+                    </p>
+
+                    <p>
+
+                        Trabalhamos com foco na qualidade,
+                        confiança, compromisso e satisfação
+                        dos nossos clientes.
+
+                    </p>
+
+                    <p>
+
+                        O nosso objetivo é criar relações
+                        duradouras e oferecer soluções que
+                        contribuam para o crescimento dos
+                        nossos parceiros.
+
+                    </p>
+
+                </div>
+
+
+                <div class="sobre-destaques">
+
+                    <div class="destaque">
+
+                        <strong>
+                            Qualidade
+                        </strong>
+
+                        <span>
+                            Soluções pensadas para as suas necessidades.
+                        </span>
+
+                    </div>
+
+
+                    <div class="destaque">
+
+                        <strong>
+                            Confiança
+                        </strong>
+
+                        <span>
+                            Relações profissionais transparentes.
+                        </span>
+
+                    </div>
+
+
+                    <div class="destaque">
+
+                        <strong>
+                            Compromisso
+                        </strong>
+
+                        <span>
+                            Dedicação em cada projeto.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SERVIÇOS
+        ================================================== -->
+
+        <section
+            class="servicos"
+            id="servicos">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    O QUE FAZEMOS
+                </span>
+
+                <h2>
+                    Os Nossos Serviços
+                </h2>
+
+                <p>
+                    Soluções adaptadas às necessidades
+                    de empresas e particulares.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        🏗️
+                    </div>
+
+                    <h3>
+                        Comércio
+                    </h3>
+
+                    <p>
+                        Comercialização de produtos e
+                        soluções de qualidade para diferentes
+                        necessidades.
+                    </p>
+
+                    <a href="#contacto">
+                        Saiba mais →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        💼
+                    </div>
+
+                    <h3>
+                        Consultoria
+                    </h3>
+
+                    <p>
+                        Apoio e orientação para empresas
+                        que procuram soluções eficientes
+                        para os seus projetos.
+                    </p>
+
+                    <a href="#contacto">
+                        Saiba mais →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        🛠️
+                    </div>
+
+                    <h3>
+                        Assistência Técnica
+                    </h3>
+
+                    <p>
+                        Serviços de assistência e suporte
+                        técnico para garantir eficiência
+                        e continuidade.
+                    </p>
+
+                    <a href="#contacto">
+                        Saiba mais →
+                    </a>
+
+                </article>
+
+
+                <article class="card">
+
+                    <div class="card-icon">
+                        🚚
+                    </div>
+
+                    <h3>
+                        Logística
+                    </h3>
+
+                    <p>
+                        Soluções logísticas para transporte,
+                        movimentação e entrega de produtos.
+                    </p>
+
+                    <a href="#contacto">
+                        Saiba mais →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             VANTAGENS
+        ================================================== -->
+
+        <section
+            class="vantagens"
+            id="vantagens">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    FORT_CAMPOS
+                </span>
+
+                <h2>
+                    Por que escolher-nos?
+                </h2>
+
+            </div>
+
+
+            <div class="vantagens-grid">
+
+
+                <div class="vantagem">
+
+                    <span class="vantagem-icon">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Qualidade
+                    </h3>
+
+                    <p>
+                        Soluções com foco na qualidade
+                        e satisfação do cliente.
+                    </p>
+
+                </div>
+
+
+                <div class="vantagem">
+
+                    <span class="vantagem-icon">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Profissionalismo
+                    </h3>
+
+                    <p>
+                        Responsabilidade e dedicação
+                        em cada projeto.
+                    </p>
+
+                </div>
+
+
+                <div class="vantagem">
+
+                    <span class="vantagem-icon">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Compromisso
+                    </h3>
+
+                    <p>
+                        Comprometimento com resultados
+                        e cumprimento de objetivos.
+                    </p>
+
+                </div>
+
+
+                <div class="vantagem">
+
+                    <span class="vantagem-icon">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Atendimento
+                    </h3>
+
+                    <p>
+                        Atendimento personalizado
+                        para cada cliente.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CONTACTO
+        ================================================== -->
+
+        <section
+            class="contacto"
+            id="contacto">
+
+            <div class="section-header">
+
+                <span class="section-label">
+                    FALE CONNOSCO
+                </span>
+
+                <h2>
+                    Entre em Contacto
+                </h2>
+
+                <p>
+                    Solicite informações ou peça um orçamento.
+                </p>
+
+            </div>
+
+
+            <div class="contacto-container">
+
+
+                <!-- INFORMAÇÕES -->
+
+                <div class="contacto-info">
+
+
+                    <div class="contacto-item">
+
+                        <span>📞</span>
+
+                        <div>
+
+                            <h3>
+                                Telefone
+                            </h3>
+
+                            <a href="tel:+244946445746">
+                                +244 946 445 746
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>🟢</span>
+
+                        <div>
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <a
+                                href="https://wa.me/244946445746"
+                                target="_blank"
+                                rel="noopener noreferrer">
+
+                                Falar pelo WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>✉️</span>
+
+                        <div>
+
+                            <h3>
+                                Email
+                            </h3>
+
+                            <a
+                                href="mailto:fortunatodacosta24@gmail.com">
+
+                                fortunatodacosta24@gmail.com
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contacto-item">
+
+                        <span>📍</span>
+
+                        <div>
+
+                            <h3>
+                                Localização
+                            </h3>
+
+                            <p>
+                                Luanda, Angola
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- FORMULÁRIO -->
+
+                <form
+                    class="contact-form"
+                    id="contactForm">
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Nome Completo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite o seu nome"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite o seu email"
+                            required>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telefone">
+                            Telefone
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="Ex.: 946 445 746">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="servico">
+                            Serviço pretendido
+                        </label>
+
+                        <select
+                            id="servico"
+                            name="servico">
+
+                            <option value="">
+                                Selecione um serviço
+                            </option>
+
+                            <option value="comercio">
+                                Comércio
+                            </option>
+
+                            <option value="consultoria">
+                                Consultoria
+                            </option>
+
+                            <option value="assistencia">
+                                Assistência Técnica
+                            </option>
+
+                            <option value="logistica">
+                                Logística
+                            </option>
+
+                            <option value="outro">
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="mensagem">
+                            Mensagem
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            placeholder="Escreva a sua mensagem..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn-submit">
+
+                        Enviar Mensagem
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CHAMADA FINAL
+        ================================================== -->
+
+        <section class="cta">
+
+            <h2>
+                Precisa de uma solução?
+            </h2>
+
+            <p>
+                Fale connosco e descubra como podemos
+                ajudar a sua empresa ou o seu projeto.
+            </p>
+
+            <a
+                href="#contacto"
+                class="btn-primary">
+
+                Solicitar Orçamento
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Fort_Campos
+                </h2>
+
+                <p>
+                    Comércio & Prestação de Serviços
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    Links
+                </h3>
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#sobre">
+                    Sobre
+                </a>
+
+                <a href="#servicos">
+                    Serviços
+                </a>
+
+                <a href="#contacto">
+                    Contacto
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    Contactos
+                </h3>
+
+                <p>
+                    📞 +244 946 445 746
+                </p>
+
+                <p>
+                    ✉️ fortunatodacosta24@gmail.com
+                </p>
+
+                <p>
+                    📍 Luanda, Angola
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Fort_Campos.
+                Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         WHATSAPP
+    ====================================================== -->
+
+    <a
+        href="https://wa.me/244946445746"
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar pelo WhatsApp">
+
+        💬
+
+    </a>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* =====================================================
+           MENU MOBILE
+        ====================================================== */
+
+        const menuToggle =
+            document.getElementById("menuToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            const aberto = navMenu.classList.toggle("active");
+
+            menuToggle.setAttribute("aria-expanded", aberto ? "true" : "false");
+            menuToggle.setAttribute(
+                "aria-label",
+                aberto ? "Fechar menu" : "Abrir menu"
+            );
+
+        });
+
+
+        /* =====================================================
+           FECHAR MENU AO CLICAR NUM LINK
+        ====================================================== */
+
+        const menuLinks =
+            document.querySelectorAll("#navMenu a");
+
+
+        menuLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                navMenu.classList.remove("active");
+
+            });
+
+        });
+
+
+        /* =====================================================
+           FORMULÁRIO
+        ====================================================== */
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+
+        contactForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+
+            const nome =
+                document.getElementById("nome").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const telefone =
+                document.getElementById("telefone").value.trim();
+
+            const servico =
+                document.getElementById("servico").value;
+
+            const mensagem =
+                document.getElementById("mensagem").value.trim();
+
+
+            if (!nome || !email || !mensagem) {
+
+                alert(
+                    "Por favor, preencha os campos obrigatórios."
+                );
+
+                return;
+
+            }
+
+
+            /*
+                Por enquanto o formulário apenas valida
+                os dados.
+
+                No próximo passo podemos ligar isto
+                a um BACKEND e a uma BASE DE DADOS.
+            */
+
+
+            alert(
+                "Obrigado, " +
+                nome +
+                "! A sua mensagem foi preenchida com sucesso."
+            );
+
+
+            contactForm.reset();
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
