@@ -1,1580 +1,231 @@
 <!DOCTYPE html>
-<html lang="pt">
-
+<html lang="pt-AO">
 <head>
-    <meta charset="UTF-8">
-
-    <!-- Responsividade -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <meta name="description"
-        content="Fort_Campos - Comércio e Prestação de Serviços. Soluções profissionais para empresas e particulares em Angola.">
-
-    <meta name="keywords"
-        content="Fort_Campos, comércio, prestação de serviços, consultoria, assistência técnica, logística, Angola">
-
-    <meta name="author" content="Fort_Campos">
-
-    <title>Fort_Campos | Comércio & Prestação de Serviços</title>
-
-    <style>
-        /* =====================================================
-           1. CONFIGURAÇÕES GERAIS
-        ====================================================== */
-
-        :root {
-            --primary: #003366;
-            --primary-dark: #00264d;
-            --primary-light: #0b4f8a;
-            --secondary: #f5f7fa;
-            --white: #ffffff;
-            --text: #243447;
-            --text-light: #667085;
-            --border: #e5e7eb;
-            --whatsapp: #25d366;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --radius: 14px;
-            --transition: 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 90px;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--white);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
-        }
-
-        button {
-            cursor: pointer;
-        }
-
-        /* =====================================================
-           2. CLASSES GERAIS
-        ====================================================== */
-
-        .container {
-            width: min(90%, 1200px);
-            margin: 0 auto;
-        }
-
-        section {
-            padding: 90px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 750px;
-            margin: 0 auto 55px;
-        }
-
-        .section-label {
-            display: inline-block;
-            margin-bottom: 10px;
-            color: var(--primary-light);
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        .section-header h2 {
-            color: var(--primary);
-            font-size: clamp(30px, 4vw, 42px);
-            margin-bottom: 15px;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            font-size: 17px;
-        }
-
-        /* =====================================================
-           3. BOTÕES
-        ====================================================== */
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 50px;
-            padding: 14px 26px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: transform var(--transition),
-                background var(--transition),
-                box-shadow var(--transition);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            box-shadow: 0 8px 20px rgba(0, 51, 102, 0.25);
-        }
-
-        .btn-whatsapp {
-            background: var(--whatsapp);
-            color: var(--white);
-        }
-
-        .btn-whatsapp:hover {
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
-        }
-
-        .btn-light {
-            background: var(--white);
-            color: var(--primary);
-        }
-
-        .btn-light:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        /* =====================================================
-           4. CABEÇALHO
-        ====================================================== */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            min-height: 78px;
-            padding: 12px 5%;
-            background: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 30px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-            z-index: 1000;
-        }
-
-        .logo {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo h1 {
-            color: var(--primary);
-            font-size: 28px;
-            line-height: 1.1;
-        }
-
-        .logo span {
-            color: var(--text-light);
-            font-size: 11px;
-            margin-top: 3px;
-        }
-
-        nav ul {
-            display: flex;
-            align-items: center;
-            list-style: none;
-            gap: 28px;
-        }
-
-        nav a {
-            position: relative;
-            color: var(--text);
-            font-weight: 600;
-            transition: color var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--primary-light);
-        }
-
-        nav a::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -7px;
-            left: 0;
-            background: var(--primary-light);
-            transition: width var(--transition);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        .menu-toggle {
-            display: none;
-            border: none;
-            background: transparent;
-            color: var(--primary);
-            font-size: 28px;
-        }
-
-        /* =====================================================
-           5. BANNER
-        ====================================================== */
-
-        .banner {
-            min-height: 720px;
-            padding: 120px 5% 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-
-            background-image:
-                linear-gradient(
-                    rgba(0, 38, 77, 0.75),
-                    rgba(0, 38, 77, 0.78)
-                ),
-                url("img/banner.png");
-
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .banner-content {
-            width: min(90%, 850px);
-            padding: 45px 35px;
-            color: var(--white);
-        }
-
-        .banner h2 {
-            font-size: clamp(36px, 5vw, 58px);
-            line-height: 1.15;
-            margin-bottom: 20px;
-        }
-
-        .banner p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 19px;
-        }
-
-        .banner-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        /* =====================================================
-           6. SOBRE NÓS
-        ====================================================== */
-
-        .sobre {
-            background: var(--white);
-        }
-
-        .sobre-content {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .sobre-texto p {
-            margin-bottom: 18px;
-            color: var(--text-light);
-            font-size: 17px;
-        }
-
-        .sobre-destaques {
-            display: grid;
-            gap: 16px;
-        }
-
-        .destaque {
-            padding: 22px;
-            border-left: 4px solid var(--primary);
-            background: var(--secondary);
-            border-radius: 0 var(--radius) var(--radius) 0;
-        }
-
-        .destaque strong {
-            display: block;
-            color: var(--primary);
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-
-        .destaque span {
-            color: var(--text-light);
-        }
-
-        /* =====================================================
-           7. SERVIÇOS
-        ====================================================== */
-
-        .servicos {
-            background: var(--secondary);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 22px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 35px 25px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            transition: transform var(--transition),
-                box-shadow var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-icon {
-            font-size: 38px;
-            margin-bottom: 20px;
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: var(--text-light);
-            margin-bottom: 20px;
-        }
-
-        .card a {
-            color: var(--primary-light);
-            font-weight: bold;
-        }
-
-        /* =====================================================
-           8. VANTAGENS
-        ====================================================== */
-
-        .vantagens {
-            background: var(--white);
-        }
-
-        .vantagens-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .vantagem {
-            text-align: center;
-            padding: 25px 15px;
-        }
-
-        .vantagem-icon {
-            width: 52px;
-            height: 52px;
-            margin: 0 auto 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 25px;
-            font-weight: bold;
-        }
-
-        .vantagem h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .vantagem p {
-            color: var(--text-light);
-        }
-
-        /* =====================================================
-           9. CONTACTO
-        ====================================================== */
-
-        .contacto {
-            background: var(--secondary);
-        }
-
-        .contacto-container {
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            gap: 50px;
-            align-items: start;
-        }
-
-        .contacto-info {
-            display: grid;
-            gap: 16px;
-        }
-
-        .contacto-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-            padding: 20px;
-            background: var(--white);
-            border-radius: 10px;
-        }
-
-        .contacto-item > span {
-            font-size: 25px;
-        }
-
-        .contacto-item h3 {
-            color: var(--primary);
-            font-size: 16px;
-            margin-bottom: 3px;
-        }
-
-        .contacto-item p,
-        .contacto-item a {
-            color: var(--text-light);
-            overflow-wrap: anywhere;
-        }
-
-        .contacto-item a:hover {
-            color: var(--primary-light);
-        }
-
-        /* FORMULÁRIO */
-
-        .contact-form {
-            padding: 35px;
-            background: var(--white);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 7px;
-            color: var(--text);
-            font-weight: bold;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            outline: none;
-            color: var(--text);
-            transition: border var(--transition),
-                box-shadow var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            border-color: var(--primary-light);
-            box-shadow: 0 0 0 3px rgba(11, 79, 138, 0.1);
-        }
-
-        .form-group textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .btn-submit {
-            width: 100%;
-            border: none;
-            background: var(--primary);
-            color: var(--white);
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background var(--transition);
-        }
-
-        .btn-submit:hover {
-            background: var(--primary-dark);
-        }
-
-        /* =====================================================
-           10. CHAMADA FINAL
-        ====================================================== */
-
-        .cta {
-            padding: 80px 5%;
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: clamp(30px, 4vw, 42px);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 28px;
-            font-size: 18px;
-        }
-
-        /* =====================================================
-           11. RODAPÉ
-        ====================================================== */
-
-        footer {
-            padding: 60px 5% 20px;
-            background: #001f3d;
-            color: var(--white);
-        }
-
-        .footer-content {
-            width: min(90%, 1200px);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1fr;
-            gap: 40px;
-        }
-
-        .footer-brand h2 {
-            font-size: 27px;
-            margin-bottom: 8px;
-        }
-
-        .footer-brand p,
-        .footer-contact p {
-            color: #cbd5e1;
-            margin-bottom: 8px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-
-        .footer-links h3,
-        .footer-contact h3 {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #cbd5e1;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .footer-bottom {
-            width: min(90%, 1200px);
-            margin: 40px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            text-align: center;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* =====================================================
-           12. BOTÃO WHATSAPP
-        ====================================================== */
-
-        .whatsapp-float {
-            position: fixed;
-            right: 22px;
-            bottom: 22px;
-            width: 58px;
-            height: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--whatsapp);
-            color: var(--white);
-            border-radius: 50%;
-            font-size: 28px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-            z-index: 999;
-            transition: transform var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* =====================================================
-           13. RESPONSIVIDADE - TABLET
-        ====================================================== */
-
-        @media (max-width: 1000px) {
-
-            .cards,
-            .vantagens-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .sobre-content,
-            .contacto-container {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .banner {
-                min-height: 650px;
-            }
-        }
-
-        /* =====================================================
-           14. RESPONSIVIDADE - TELEMÓVEL
-        ====================================================== */
-
-        @media (max-width: 700px) {
-
-            html {
-                scroll-padding-top: 70px;
-            }
-
-            header {
-                min-height: 68px;
-                padding: 10px 16px;
-            }
-
-            .logo h1 {
-                font-size: 23px;
-            }
-
-            .logo span {
-                font-size: 9px;
-            }
-
-            .menu-toggle {
-                display: block;
-                z-index: 1001;
-            }
-
-            nav {
-                position: fixed;
-                top: 68px;
-                left: 0;
-                width: 100%;
-                background: var(--white);
-                padding: 0 20px;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.35s ease,
-                    padding 0.35s ease;
-                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
-            }
-
-            nav.active {
-                max-height: 400px;
-                padding: 15px 20px 25px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 0;
-            }
-
-            nav a {
-                display: block;
-                padding: 13px 5px;
-            }
-
-            nav a::after {
-                display: none;
-            }
-
-            .banner {
-                min-height: 680px;
-                padding: 100px 15px 40px;
-            }
-
-            .banner-content {
-                width: 100%;
-                padding: 25px 10px;
-            }
-
-            .banner h2 {
-                font-size: 34px;
-            }
-
-            .banner p {
-                font-size: 16px;
-            }
-
-            .banner-buttons {
-                flex-direction: column;
-            }
-
-            .banner-buttons .btn {
-                width: 100%;
-            }
-
-            section {
-                padding: 65px 0;
-            }
-
-            .section-header {
-                margin-bottom: 38px;
-            }
-
-            .section-header h2 {
-                font-size: 30px;
-            }
-
-            .sobre-content {
-                gap: 35px;
-            }
-
-            .cards,
-            .vantagens-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contacto-container {
-                gap: 30px;
-            }
-
-            .contact-form {
-                padding: 25px 18px;
-            }
-
-            .cta {
-                padding: 65px 20px;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-links {
-                align-items: center;
-            }
-
-            .whatsapp-float {
-                width: 54px;
-                height: 54px;
-                right: 15px;
-                bottom: 15px;
-            }
-        }
-
-        /* =====================================================
-           15. ACESSIBILIDADE
-        ====================================================== */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                transition: none !important;
-                animation: none !important;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FortCampos - Comércio e Prestação de Serviços em Angola. Soluções profissionais para empresas e particulares, incluindo comércio, consultoria, assistência técnica e logística.">
+  <meta name="keywords" content="FortCampos, Fort_Campos, comércio Angola, prestação de serviços Angola, consultoria, assistência técnica, logística, soluções empresariais">
+  <meta name="author" content="Fort_Campos">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#003366">
+  <meta property="og:title" content="FortCampos | Comércio & Prestação de Serviços">
+  <meta property="og:description" content="Soluções profissionais para empresas e particulares em Angola.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fortcampos.github.io/">
+  <meta property="og:site_name" content="FortCampos">
+  <meta property="og:locale" content="pt_AO">
+  <meta property="og:image" content="https://fortcampos.github.io/img/banner.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FortCampos | Comércio & Prestação de Serviços">
+  <meta name="twitter:description" content="Comércio, consultoria, assistência técnica e soluções logísticas em Angola.">
+  <meta name="twitter:image" content="https://fortcampos.github.io/img/banner.png">
+  <link rel="canonical" href="https://fortcampos.github.io/">
+  <link rel="icon" href="img/favicon.png" type="image/png">
+  <title>FortCampos | Comércio & Prestação de Serviços</title>
+
+  <style>
+    :root{--primary:#003366;--primary-dark:#00264d;--primary-light:#0b5fa5;--accent:#1e88e5;--secondary:#f5f7fa;--white:#fff;--text:#1f2937;--muted:#667085;--border:#e5e7eb;--whatsapp:#25d366;--shadow:0 12px 35px rgba(0,30,60,.09);--radius:16px;--transition:.25s ease}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{font-family:Inter,Arial,Helvetica,sans-serif;background:#fff;color:var(--text);line-height:1.65;overflow-x:hidden}
+    body.menu-open{overflow:hidden}
+    a{text-decoration:none;color:inherit} img{display:block;max-width:100%;height:auto} button,input,select,textarea{font:inherit} button{cursor:pointer}
+    .container{width:min(92%,1200px);margin:auto}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    section{padding:90px 0}.section-header{text-align:center;max-width:760px;margin:0 auto 52px}.section-label{display:inline-block;color:var(--accent);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.section-header h2{color:var(--primary);font-size:clamp(30px,4vw,44px);line-height:1.15;margin-bottom:14px}.section-header p{color:var(--muted);font-size:17px}
+    .skip-link{position:fixed;top:-100px;left:15px;background:var(--primary);color:#fff;padding:12px 18px;border-radius:8px;z-index:9999;font-weight:700}.skip-link:focus{top:15px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:50px;padding:13px 23px;border-radius:9px;border:0;font-weight:800;transition:transform var(--transition),background var(--transition),box-shadow var(--transition)}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--primary);color:#fff}.btn-primary:hover{background:var(--primary-dark);box-shadow:0 10px 24px rgba(0,51,102,.22)}.btn-whatsapp{background:var(--whatsapp);color:#fff}.btn-whatsapp:hover{background:#1da851;box-shadow:0 10px 24px rgba(37,211,102,.25)}.btn-light{background:#fff;color:var(--primary)}.btn-outline{border:1px solid rgba(255,255,255,.45);color:#fff;background:transparent}.btn-outline:hover{background:#fff;color:var(--primary)}
+
+    header{position:fixed;inset:0 0 auto;width:100%;min-height:78px;padding:12px 4%;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;gap:25px;box-shadow:0 2px 15px rgba(0,0,0,.08);z-index:1000}.logo{display:flex;flex-direction:column}.logo h1{color:var(--primary);font-size:28px;line-height:1.05}.logo span{color:var(--muted);font-size:10px;margin-top:4px}.nav-list{display:flex;align-items:center;gap:25px;list-style:none}.nav-list a{position:relative;color:var(--text);font-weight:700;padding:8px 0}.nav-list a:hover,.nav-list a.active{color:var(--accent)}.nav-list a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width var(--transition)}.nav-list a:hover::after,.nav-list a.active::after{width:100%}.header-cta{margin-left:5px}.menu-toggle{display:none;border:0;background:none;color:var(--primary);font-size:29px}
+
+    .hero{min-height:760px;padding:135px 0 80px;display:flex;align-items:center;text-align:center;color:#fff;background-image:linear-gradient(90deg,rgba(0,18,38,.82),rgba(0,51,102,.62)),url("img/banner.png");background-size:cover;background-position:center;background-repeat:no-repeat;background-color:var(--primary)}.hero-content{max-width:900px;margin:auto}.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.09);border-radius:999px;font-size:14px;font-weight:700;margin-bottom:22px}.hero h2{font-size:clamp(38px,6vw,64px);line-height:1.08;margin-bottom:20px}.hero p{max-width:720px;margin:0 auto 30px;font-size:19px;color:#eef6ff}.hero-buttons{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}.hero-trust{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin-top:35px;font-size:14px;color:#dcecff}.hero-trust span{display:flex;align-items:center;gap:7px}
+
+    .about{background:#fff}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center}.about-text p{color:var(--muted);font-size:17px;margin-bottom:18px}.about-text strong{color:var(--primary)}.about-list{list-style:none;display:grid;gap:12px;margin:24px 0}.about-list li{display:flex;gap:10px;align-items:flex-start}.check{width:25px;height:25px;min-width:25px;border-radius:50%;background:#e8f4ff;color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:900}.about-panel{padding:30px;background:linear-gradient(145deg,#f7fbff,#eef5fa);border:1px solid #e3edf5;border-radius:var(--radius);box-shadow:var(--shadow)}.about-panel h3{color:var(--primary);font-size:25px;margin-bottom:12px}.about-panel p{color:var(--muted);margin-bottom:20px}.mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.mini{background:#fff;border-radius:12px;padding:18px;border:1px solid var(--border)}.mini strong{display:block;color:var(--primary);font-size:22px}.mini span{color:var(--muted);font-size:13px}
+
+    .services{background:var(--secondary)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.card{background:#fff;padding:30px 24px;border:1px solid #edf0f3;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform var(--transition),box-shadow var(--transition)}.card:hover{transform:translateY(-7px);box-shadow:0 20px 40px rgba(0,30,60,.13)}.icon{width:54px;height:54px;border-radius:14px;background:#eaf4ff;color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:20px}.icon svg{width:28px;height:28px;stroke:currentColor;fill:none;stroke-width:1.8}.card h3{color:var(--primary);font-size:20px;margin-bottom:10px}.card p{color:var(--muted);margin-bottom:20px}.text-link{color:var(--accent);font-weight:800}
+
+    .why{background:#fff}.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.why-card{text-align:center;padding:28px 18px;border:1px solid var(--border);border-radius:var(--radius);background:#fff}.why-icon{width:55px;height:55px;margin:0 auto 16px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--primary);color:#fff}.why-card h3{color:var(--primary);margin-bottom:8px}.why-card p{color:var(--muted);font-size:15px}
+
+    .portfolio{background:var(--secondary)}.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.portfolio-card{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow)}.portfolio-image{height:210px;background:linear-gradient(135deg,#dfeeff,#f6f9fc);display:flex;align-items:center;justify-content:center;color:var(--primary);font-weight:800;font-size:18px}.portfolio-body{padding:22px}.portfolio-body h3{color:var(--primary);margin-bottom:8px}.portfolio-body p{color:var(--muted);font-size:15px}.portfolio-note{text-align:center;color:var(--muted);font-size:14px;margin-top:25px}
+
+    .process{background:#fff}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}.step{position:relative;padding:25px;border:1px solid var(--border);border-radius:var(--radius)}.step-number{width:42px;height:42px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;margin-bottom:15px}.step h3{color:var(--primary);margin-bottom:8px}.step p{color:var(--muted);font-size:15px}
+
+    .faq{background:var(--secondary)}.faq-list{max-width:900px;margin:auto;display:grid;gap:12px}.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}.faq-question{width:100%;display:flex;justify-content:space-between;align-items:center;text-align:left;background:#fff;border:0;padding:20px;font-weight:800;color:var(--primary)}.faq-question span{font-size:22px;color:var(--accent);transition:transform var(--transition)}.faq-answer{display:none;padding:0 20px 20px;color:var(--muted)}.faq-item.open .faq-answer{display:block}.faq-item.open .faq-question span{transform:rotate(45deg)}
+
+    .contact{background:#f5f7fa}.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:45px;align-items:start}.contact-info{display:grid;gap:14px}.contact-item{display:flex;gap:14px;padding:20px;background:#fff;border:1px solid var(--border);border-radius:12px}.contact-item .contact-icon{font-size:23px}.contact-item h3{color:var(--primary);font-size:16px;margin-bottom:3px}.contact-item p,.contact-item a{color:var(--muted);overflow-wrap:anywhere}.contact-item a:hover{color:var(--accent)}.contact-form{background:#fff;padding:32px;border-radius:var(--radius);box-shadow:var(--shadow)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.form-group{margin-bottom:18px}.form-group.full{grid-column:1/-1}.form-group label{display:block;margin-bottom:7px;font-weight:700;color:var(--text)}.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 14px;border:1px solid var(--border);border-radius:8px;outline:none;color:var(--text);background:#fff}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(30,136,229,.1)}.form-group textarea{min-height:130px;resize:vertical}.form-help{font-size:13px;color:var(--muted);margin-top:10px}.form-success{display:none;margin-top:14px;padding:12px;border-radius:8px;background:#eafaf0;color:#166534;font-size:14px}
+
+    .cta{padding:80px 0;background:var(--primary);color:#fff;text-align:center}.cta h2{font-size:clamp(30px,4vw,44px);margin-bottom:14px}.cta p{max-width:680px;margin:0 auto 26px;color:#e4eff9;font-size:18px}
+    footer{padding:60px 0 20px;background:#001f3d;color:#fff}.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:35px}.footer-brand h2{font-size:28px;margin-bottom:10px}.footer-brand p,.footer-col p{color:#cbd5e1}.footer-col h3{margin-bottom:14px}.footer-links{list-style:none;display:grid;gap:8px}.footer-links a{color:#cbd5e1}.footer-links a:hover{color:#fff}.footer-social{display:flex;gap:10px;margin-top:18px}.social{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-weight:800}.footer-bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);text-align:center;color:#94a3b8;font-size:13px}.legal{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:10px}.legal a:hover{color:#fff}
+    .whatsapp-float{position:fixed;right:20px;bottom:20px;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--whatsapp);color:#fff;box-shadow:0 8px 25px rgba(0,0,0,.25);z-index:999;transition:transform var(--transition)}.whatsapp-float:hover{transform:scale(1.08)}.whatsapp-float svg{width:29px;height:29px;fill:#fff}
+    .back-top{position:fixed;right:20px;bottom:90px;width:42px;height:42px;border:0;border-radius:50%;background:var(--primary);color:#fff;display:none;align-items:center;justify-content:center;z-index:998}.back-top.show{display:flex}
+
+    @media(max-width:1050px){.cards,.why-grid{grid-template-columns:repeat(2,1fr)}.about-grid,.contact-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:repeat(2,1fr)}.portfolio-grid,.process-grid{grid-template-columns:repeat(2,1fr)}.header-cta{display:none}}
+    @media(max-width:760px){section{padding:65px 0}.container{width:min(92%,680px)}header{min-height:68px;padding:10px 16px}.logo h1{font-size:23px}.logo span{font-size:8.5px}.menu-toggle{display:block}.nav-menu{position:fixed;top:68px;left:0;width:100%;background:#fff;padding:0 20px;max-height:0;overflow:hidden;box-shadow:0 10px 18px rgba(0,0,0,.08);transition:max-height .3s ease,padding .3s ease}.nav-menu.active{max-height:450px;padding:15px 20px 25px}.nav-list{flex-direction:column;align-items:stretch;gap:0}.nav-list a{display:block;padding:13px 5px}.nav-list a::after{display:none}.hero{min-height:700px;padding:105px 0 50px;background-position:center}.hero h2{font-size:36px}.hero p{font-size:16px}.hero-buttons{flex-direction:column}.hero-buttons .btn{width:100%}.hero-trust{gap:12px;flex-direction:column}.cards,.why-grid,.portfolio-grid,.process-grid,.footer-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.form-group.full{grid-column:auto}.contact-form{padding:24px 18px}.cta{padding:65px 0}.whatsapp-float{width:54px;height:54px;right:15px;bottom:15px}.back-top{right:15px;bottom:78px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"LocalBusiness",
+    "name":"Fort_Campos",
+    "alternateName":"FortCampos",
+    "description":"Comércio e prestação de serviços para empresas e particulares em Angola.",
+    "url":"https://fortcampos.github.io/",
+    "telephone":"+244946445746",
+    "email":"fortunatodacosta24@gmail.com",
+    "address":{"@type":"PostalAddress","addressLocality":"Luanda","addressCountry":"AO"},
+    "areaServed":{"@type":"Country","name":"Angola"},
+    "serviceType":["Comércio","Consultoria","Assistência Técnica","Logística"]
+  }
+  </script>
 </head>
 
 <body>
-
-    <!-- =====================================================
-         CABEÇALHO
-    ====================================================== -->
-
-    <header>
-
-        <div class="logo">
-            <h1>Fort_Campos</h1>
-            <span>Comércio & Prestação de Serviços</span>
-        </div>
-
-        <button
-            class="menu-toggle"
-            id="menuToggle"
-            type="button"
-            aria-label="Abrir menu"
-            aria-expanded="false"
-            aria-controls="navMenu">
-
-            ☰
-
-        </button>
-
-        <nav id="navMenu" aria-label="Menu principal">
-
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#vantagens">Por que nós?</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-    <main>
-
-        <!-- =================================================
-             BANNER
-        ================================================== -->
-
-        <section class="banner" id="inicio">
-
-            <div class="banner-content">
-
-                <h2>
-                    Soluções Inteligentes para Empresas e Particulares
-                </h2>
-
-                <p>
-                    Comércio, consultoria, assistência técnica
-                    e soluções logísticas.
-                </p>
-
-                <div class="banner-buttons">
-
-                    <a href="#contacto" class="btn btn-primary">
-                        Solicitar Orçamento
-                    </a>
-
-                    <a
-                        href="https://wa.me/244946445746"
-                        class="btn btn-whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer">
-
-                        Falar pelo WhatsApp
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SOBRE
-        ================================================== -->
-
-        <section class="sobre" id="sobre">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-label">SOBRE NÓS</span>
-
-                    <h2>Quem Somos</h2>
-
-                </div>
-
-
-                <div class="sobre-content">
-
-                    <div class="sobre-texto">
-
-                        <p>
-                            A <strong>Fort_Campos</strong> dedica-se
-                            ao comércio e à prestação de serviços,
-                            oferecendo soluções profissionais para
-                            empresas e particulares.
-                        </p>
-
-                        <p>
-                            Trabalhamos com foco na qualidade,
-                            confiança, compromisso e satisfação
-                            dos nossos clientes.
-                        </p>
-
-                        <p>
-                            O nosso objetivo é criar relações
-                            duradouras e oferecer soluções que
-                            contribuam para o crescimento dos
-                            nossos parceiros.
-                        </p>
-
-                    </div>
-
-
-                    <div class="sobre-destaques">
-
-                        <div class="destaque">
-                            <strong>Qualidade</strong>
-                            <span>Soluções pensadas para as suas necessidades.</span>
-                        </div>
-
-                        <div class="destaque">
-                            <strong>Confiança</strong>
-                            <span>Relações profissionais transparentes.</span>
-                        </div>
-
-                        <div class="destaque">
-                            <strong>Compromisso</strong>
-                            <span>Dedicação em cada projeto.</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             SERVIÇOS
-        ================================================== -->
-
-        <section class="servicos" id="servicos">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-label">O QUE FAZEMOS</span>
-
-                    <h2>Os Nossos Serviços</h2>
-
-                    <p>
-                        Soluções adaptadas às necessidades
-                        de empresas e particulares.
-                    </p>
-
-                </div>
-
-
-                <div class="cards">
-
-                    <article class="card">
-
-                        <div class="card-icon">🏗️</div>
-
-                        <h3>Comércio</h3>
-
-                        <p>
-                            Comercialização de produtos e soluções
-                            de qualidade para diferentes necessidades.
-                        </p>
-
-                        <a href="#contacto">Saiba mais →</a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <div class="card-icon">💼</div>
-
-                        <h3>Consultoria</h3>
-
-                        <p>
-                            Apoio e orientação para empresas
-                            que procuram soluções eficientes
-                            para os seus projetos.
-                        </p>
-
-                        <a href="#contacto">Saiba mais →</a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <div class="card-icon">🛠️</div>
-
-                        <h3>Assistência Técnica</h3>
-
-                        <p>
-                            Serviços de assistência e suporte técnico
-                            para garantir eficiência e continuidade.
-                        </p>
-
-                        <a href="#contacto">Saiba mais →</a>
-
-                    </article>
-
-
-                    <article class="card">
-
-                        <div class="card-icon">🚚</div>
-
-                        <h3>Logística</h3>
-
-                        <p>
-                            Soluções logísticas para transporte,
-                            movimentação e entrega de produtos.
-                        </p>
-
-                        <a href="#contacto">Saiba mais →</a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             VANTAGENS
-        ================================================== -->
-
-        <section class="vantagens" id="vantagens">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-label">FORT_CAMPOS</span>
-
-                    <h2>Por que escolher-nos?</h2>
-
-                </div>
-
-
-                <div class="vantagens-grid">
-
-                    <div class="vantagem">
-
-                        <span class="vantagem-icon">✓</span>
-
-                        <h3>Qualidade</h3>
-
-                        <p>
-                            Soluções com foco na qualidade
-                            e satisfação do cliente.
-                        </p>
-
-                    </div>
-
-
-                    <div class="vantagem">
-
-                        <span class="vantagem-icon">✓</span>
-
-                        <h3>Profissionalismo</h3>
-
-                        <p>
-                            Responsabilidade e dedicação
-                            em cada projeto.
-                        </p>
-
-                    </div>
-
-
-                    <div class="vantagem">
-
-                        <span class="vantagem-icon">✓</span>
-
-                        <h3>Compromisso</h3>
-
-                        <p>
-                            Comprometimento com resultados
-                            e cumprimento de objetivos.
-                        </p>
-
-                    </div>
-
-
-                    <div class="vantagem">
-
-                        <span class="vantagem-icon">✓</span>
-
-                        <h3>Atendimento</h3>
-
-                        <p>
-                            Atendimento personalizado
-                            para cada cliente.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             CONTACTO
-        ================================================== -->
-
-        <section class="contacto" id="contacto">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-label">FALE CONNOSCO</span>
-
-                    <h2>Entre em Contacto</h2>
-
-                    <p>
-                        Solicite informações ou peça um orçamento.
-                    </p>
-
-                </div>
-
-
-                <div class="contacto-container">
-
-                    <!-- INFORMAÇÕES -->
-
-                    <div class="contacto-info">
-
-                        <div class="contacto-item">
-
-                            <span>📞</span>
-
-                            <div>
-                                <h3>Telefone</h3>
-
-                                <a href="tel:+244946445746">
-                                    +244 946 445 746
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contacto-item">
-
-                            <span>💬</span>
-
-                            <div>
-                                <h3>WhatsApp</h3>
-
-                                <a
-                                    href="https://wa.me/244946445746"
-                                    target="_blank"
-                                    rel="noopener noreferrer">
-
-                                    Falar pelo WhatsApp
-
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contacto-item">
-
-                            <span>✉️</span>
-
-                            <div>
-                                <h3>Email</h3>
-
-                                <a href="mailto:fortunatodacosta24@gmail.com">
-                                    fortunatodacosta24@gmail.com
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <div class="contacto-item">
-
-                            <span>📍</span>
-
-                            <div>
-                                <h3>Localização</h3>
-
-                                <p>Luanda, Angola</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- FORMULÁRIO -->
-
-                    <form class="contact-form" id="contactForm">
-
-                        <div class="form-group">
-
-                            <label for="nome">
-                                Nome Completo *
-                            </label>
-
-                            <input
-                                type="text"
-                                id="nome"
-                                name="nome"
-                                placeholder="Digite o seu nome"
-                                autocomplete="name"
-                                required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email *
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="Digite o seu email"
-                                autocomplete="email"
-                                required>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="telefone">
-                                Telefone
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="telefone"
-                                name="telefone"
-                                placeholder="Ex.: 946 445 746"
-                                autocomplete="tel">
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="servico">
-                                Serviço pretendido
-                            </label>
-
-                            <select id="servico" name="servico">
-
-                                <option value="">
-                                    Selecione um serviço
-                                </option>
-
-                                <option value="Comércio">
-                                    Comércio
-                                </option>
-
-                                <option value="Consultoria">
-                                    Consultoria
-                                </option>
-
-                                <option value="Assistência Técnica">
-                                    Assistência Técnica
-                                </option>
-
-                                <option value="Logística">
-                                    Logística
-                                </option>
-
-                                <option value="Outro">
-                                    Outro
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="mensagem">
-                                Mensagem *
-                            </label>
-
-                            <textarea
-                                id="mensagem"
-                                name="mensagem"
-                                placeholder="Escreva a sua mensagem..."
-                                required></textarea>
-
-                        </div>
-
-
-                        <button type="submit" class="btn-submit">
-                            Enviar Mensagem
-                        </button>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             CHAMADA FINAL
-        ================================================== -->
-
-        <section class="cta">
-
-            <h2>Precisa de uma solução?</h2>
-
-            <p>
-                Fale connosco e descubra como podemos
-                ajudar a sua empresa ou o seu projeto.
-            </p>
-
-            <a href="#contacto" class="btn btn-light">
-                Solicitar Orçamento
-            </a>
-
-        </section>
-
-    </main>
-
-
-    <!-- =====================================================
-         RODAPÉ
-    ====================================================== -->
-
-    <footer>
-
-        <div class="footer-content">
-
-            <div class="footer-brand">
-
-                <h2>Fort_Campos</h2>
-
-                <p>
-                    Comércio & Prestação de Serviços
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>Links</h3>
-
-                <a href="#inicio">Início</a>
-                <a href="#sobre">Sobre</a>
-                <a href="#servicos">Serviços</a>
-                <a href="#contacto">Contacto</a>
-
-            </div>
-
-
-            <div class="footer-contact">
-
-                <h3>Contactos</h3>
-
-                <p>📞 +244 946 445 746</p>
-
-                <p>✉️ fortunatodacosta24@gmail.com</p>
-
-                <p>📍 Luanda, Angola</p>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <p>
-                © 2026 Fort_Campos. Todos os direitos reservados.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =====================================================
-         WHATSAPP FLUTUANTE
-    ====================================================== -->
-
-    <a
-        href="https://wa.me/244946445746"
-        class="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Falar pelo WhatsApp">
-
-        💬
-
+  <a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+  <header id="header">
+    <a class="logo" href="#inicio" aria-label="FortCampos - Início">
+      <h1>FortCampos</h1>
+      <span>Comércio &amp; Prestação de Serviços SU (LDA)</span>
     </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">☰</button>
+    <nav class="nav-menu" id="navMenu" aria-label="Menu principal">
+      <ul class="nav-list">
+        <li><a href="#inicio">Início</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#vantagens">Por que nós?</a></li><li><a href="#projetos">Projetos</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contacto">Contacto</a></li>
+        <li class="header-cta"><a class="btn btn-primary" href="https://wa.me/244946445746?text=Olá%20FortCampos,%20gostaria%20de%20solicitar%20um%20orçamento." target="_blank" rel="noopener">Solicitar orçamento</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="hero-badge">● Soluções profissionais em Angola</div>
+        <h2>Soluções Inteligentes para Empresas e Particulares</h2>
+        <p>Comércio, consultoria, assistência técnica e soluções logísticas pensadas para responder às necessidades dos nossos clientes com profissionalismo e eficiência.</p>
+        <div class="hero-buttons">
+          <a class="btn btn-whatsapp" href="https://wa.me/244946445746?text=Olá%20FortCampos,%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços." target="_blank" rel="noopener">Falar pelo WhatsApp</a>
+          <a class="btn btn-outline" href="#servicos">Conhecer os serviços</a>
+        </div>
+        <div class="hero-trust"><span>✓ Atendimento profissional</span><span>✓ Soluções à medida</span><span>✓ Foco no cliente</span></div>
+      </div>
+    </section>
 
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
+    <section class="about" id="sobre">
+      <div class="container">
+        <div class="section-header"><span class="section-label">Sobre a empresa</span><h2>Uma parceira para as suas necessidades</h2><p>A Fort_Campos atua com foco em soluções práticas, profissionais e adaptadas às necessidades de empresas e particulares em Angola.</p></div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>A <strong>Fort_Campos</strong> combina diferentes áreas de comércio e prestação de serviços para oferecer uma experiência simples: compreender a necessidade, apresentar uma solução e acompanhar o cliente.</p>
+            <p>O nosso compromisso é trabalhar com <strong>responsabilidade, organização, qualidade e transparência</strong>, procurando construir relações duradouras com clientes e parceiros.</p>
+            <ul class="about-list">
+              <li><span class="check">✓</span><span>Atendimento orientado para empresas e particulares.</span></li>
+              <li><span class="check">✓</span><span>Soluções adaptadas ao objetivo de cada cliente.</span></li>
+              <li><span class="check">✓</span><span>Comunicação direta e acompanhamento do serviço.</span></li>
+            </ul>
+          </div>
+          <div class="about-panel"><h3>O nosso compromisso</h3><p>Entregar soluções com profissionalismo, atenção aos detalhes e respeito pelo cliente.</p><div class="mini-grid"><div class="mini"><strong>01</strong><span>Profissionalismo</span></div><div class="mini"><strong>02</strong><span>Transparência</span></div><div class="mini"><strong>03</strong><span>Eficiência</span></div><div class="mini"><strong>04</strong><span>Confiança</span></div></div></div>
+        </div>
+      </div>
+    </section>
 
-    <script>
+    <section class="services" id="servicos">
+      <div class="container">
+        <div class="section-header"><span class="section-label">O que fazemos</span><h2>Serviços</h2><p>Conheça algumas das áreas em que podemos apoiar a sua empresa ou projeto.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 9h18M5 9l1-5h12l1 5M5 9v10h14V9M9 19v-6h6v6"/></svg></div><h3>Comércio</h3><p>Fornecimento e comercialização de produtos e soluções de acordo com as necessidades do cliente.</p><a class="text-link" href="#contacto" data-service="Comércio">Solicitar serviço →</a></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-4 2.8-6 7-6s6.3 2 7 6M17 4l2 2-2 2"/></svg></div><h3>Consultoria</h3><p>Apoio e orientação para necessidades empresariais, operacionais e de organização.</p><a class="text-link" href="#contacto" data-service="Consultoria">Solicitar serviço →</a></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 6l4-4 4 4-4 4M18 2v8M4 20l6-6M3 7l5 5M9 3l12 12"/></svg></div><h3>Assistência Técnica</h3><p>Apoio técnico e soluções para equipamentos, sistemas e necessidades de tecnologia.</p><a class="text-link" href="#contacto" data-service="Assistência Técnica">Solicitar serviço →</a></article>
+          <article class="card"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 6h11v11H3zM14 10h4l3 3v4h-7zM6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4M18 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4"/></svg></div><h3>Logística</h3><p>Apoio a processos de transporte, organização e movimentação de bens e soluções.</p><a class="text-link" href="#contacto" data-service="Logística">Solicitar serviço →</a></article>
+        </div>
+      </div>
+    </section>
 
-        /* =====================================================
-           MENU MOBILE
-        ====================================================== */
+    <section class="why" id="vantagens">
+      <div class="container"><div class="section-header"><span class="section-label">Por que escolher-nos</span><h2>Uma abordagem simples e profissional</h2><p>Valorizamos uma relação clara com o cliente desde o primeiro contacto até à conclusão do serviço.</p></div>
+        <div class="why-grid">
+          <article class="why-card"><div class="why-icon">✓</div><h3>Profissionalismo</h3><p>Atuação organizada e responsável em cada serviço.</p></article>
+          <article class="why-card"><div class="why-icon">◆</div><h3>Qualidade</h3><p>Foco em soluções adequadas ao objetivo apresentado.</p></article>
+          <article class="why-card"><div class="why-icon">↗</div><h3>Eficiência</h3><p>Procura de respostas práticas e objetivas.</p></article>
+          <article class="why-card"><div class="why-icon">♡</div><h3>Cliente em primeiro</h3><p>Comunicação próxima e atenção às necessidades.</p></article>
+        </div>
+      </div>
+    </section>
 
-        const menuToggle = document.getElementById("menuToggle");
-        const navMenu = document.getElementById("navMenu");
-        const menuLinks = document.querySelectorAll("#navMenu a");
+    <section class="portfolio" id="projetos">
+      <div class="container"><div class="section-header"><span class="section-label">Projetos e trabalhos</span><h2>O que podemos realizar</h2><p>Área preparada para apresentar trabalhos, projetos e resultados reais da Fort_Campos.</p></div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card"><div class="portfolio-image">Projeto / Trabalho 01</div><div class="portfolio-body"><h3>Comércio e fornecimento</h3><p>Espaço para apresentar um trabalho ou fornecimento realizado pela empresa.</p></div></article>
+          <article class="portfolio-card"><div class="portfolio-image">Projeto / Trabalho 02</div><div class="portfolio-body"><h3>Assistência técnica</h3><p>Espaço para mostrar um projeto técnico ou solução implementada.</p></div></article>
+          <article class="portfolio-card"><div class="portfolio-image">Projeto / Trabalho 03</div><div class="portfolio-body"><h3>Serviços empresariais</h3><p>Espaço para apresentar uma solução prestada a uma empresa ou cliente.</p></div></article>
+        </div>
+        <p class="portfolio-note">Substitua estes exemplos por fotografias e descrições de trabalhos reais quando estiverem disponíveis.</p>
+      </div>
+    </section>
 
+    <section class="process"><div class="container"><div class="section-header"><span class="section-label">Como trabalhamos</span><h2>Do primeiro contacto à solução</h2><p>Um processo simples para tornar o atendimento mais claro.</p></div><div class="process-grid">
+      <article class="step"><div class="step-number">1</div><h3>Contacto</h3><p>O cliente apresenta a sua necessidade por WhatsApp, telefone ou formulário.</p></article>
+      <article class="step"><div class="step-number">2</div><h3>Análise</h3><p>Avaliamos o pedido e procuramos compreender o que é necessário.</p></article>
+      <article class="step"><div class="step-number">3</div><h3>Proposta</h3><p>Apresentamos uma solução e, quando aplicável, um orçamento.</p></article>
+      <article class="step"><div class="step-number">4</div><h3>Execução</h3><p>Avançamos com o serviço e mantemos o cliente informado.</p></article>
+    </div></div></section>
 
-        function fecharMenu() {
-            navMenu.classList.remove("active");
-            menuToggle.setAttribute("aria-expanded", "false");
-            menuToggle.setAttribute("aria-label", "Abrir menu");
-        }
+    <section class="faq" id="faq"><div class="container"><div class="section-header"><span class="section-label">Dúvidas</span><h2>Perguntas frequentes</h2><p>Algumas respostas rápidas para facilitar o seu primeiro contacto.</p></div><div class="faq-list">
+      <div class="faq-item"><button class="faq-question" type="button">Que serviços a Fort_Campos oferece?<span>+</span></button><div class="faq-answer">Atualmente apresentamos serviços nas áreas de comércio, consultoria, assistência técnica e logística. Entre em contacto para explicar a sua necessidade.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Atendem empresas e particulares?<span>+</span></button><div class="faq-answer">Sim. O site está direcionado tanto para empresas como para particulares, conforme a natureza do serviço solicitado.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Como posso solicitar um orçamento?<span>+</span></button><div class="faq-answer">Pode utilizar o formulário de contacto ou falar diretamente pelo WhatsApp através do botão disponível no site.</div></div>
+      <div class="faq-item"><button class="faq-question" type="button">Onde a Fort_Campos está localizada?<span>+</span></button><div class="faq-answer">A empresa está apresentada no site como atuando em Luanda, Angola. Para confirmar disponibilidade numa determinada zona, contacte-nos.</div></div>
+    </div></div></section>
 
+    <section class="contact" id="contacto"><div class="container"><div class="section-header"><span class="section-label">Fale connosco</span><h2>Solicite informações ou orçamento</h2><p>Preencha o formulário e será aberta uma mensagem no WhatsApp com os dados do seu pedido.</p></div><div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-item"><span class="contact-icon">☎</span><div><h3>Telefone / WhatsApp</h3><a href="tel:+244946445746">+244 946 445 746</a></div></div>
+        <div class="contact-item"><span class="contact-icon">✉</span><div><h3>E-mail</h3><a href="mailto:fortunatodacosta24@gmail.com">fortunatodacosta24@gmail.com</a></div></div>
+        <div class="contact-item"><span class="contact-icon">⌖</span><div><h3>Localização</h3><p>Luanda, Angola</p></div></div>
+        <div class="contact-item"><span class="contact-icon">◷</span><div><h3>Atendimento</h3><p>Contacte-nos para confirmar disponibilidade e horário.</p></div></div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="form-grid">
+          <div class="form-group"><label for="nome">Nome *</label><input id="nome" name="nome" type="text" required autocomplete="name" placeholder="O seu nome"></div>
+          <div class="form-group"><label for="telefone">Telefone *</label><input id="telefone" name="telefone" type="tel" required autocomplete="tel" placeholder="Ex.: 946 445 746"></div>
+          <div class="form-group"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" placeholder="seuemail@exemplo.com"></div>
+          <div class="form-group"><label for="servico">Serviço</label><select id="servico" name="servico"><option value="">Selecione uma opção</option><option>Comércio</option><option>Consultoria</option><option>Assistência Técnica</option><option>Logística</option><option>Outro</option></select></div>
+          <div class="form-group full"><label for="mensagem">Mensagem *</label><textarea id="mensagem" name="mensagem" required placeholder="Descreva brevemente o que precisa..."></textarea></div>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Enviar pedido pelo WhatsApp →</button>
+        <p class="form-help">Ao enviar, o seu pedido será preparado numa conversa do WhatsApp da Fort_Campos.</p><div class="form-success" id="formSuccess">Mensagem preparada. Se o WhatsApp não abrir automaticamente, utilize o botão de contacto direto.</div>
+      </form>
+    </div></div></section>
 
-        menuToggle.addEventListener("click", function () {
+    <section class="cta"><div class="container"><h2>Tem uma necessidade? Vamos conversar.</h2><p>Explique-nos o que precisa e procuremos juntos a solução mais adequada.</p><a class="btn btn-light" href="https://wa.me/244946445746?text=Olá%20FortCampos,%20quero%20solicitar%20um%20orçamento." target="_blank" rel="noopener">Solicitar orçamento pelo WhatsApp</a></div></section>
+  </main>
 
-            const aberto = navMenu.classList.toggle("active");
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand"><h2>FortCampos</h2><p>Comércio &amp; Prestação de Serviços SU (LDA)</p><div class="footer-social"><a class="social" href="https://wa.me/244946445746" target="_blank" rel="noopener" aria-label="WhatsApp">WA</a><a class="social" href="mailto:fortunatodacosta24@gmail.com" aria-label="E-mail">@</a></div></div>
+      <div class="footer-col"><h3>Links rápidos</h3><ul class="footer-links"><li><a href="#inicio">Início</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#contacto">Contacto</a></li></ul></div>
+      <div class="footer-col"><h3>Serviços</h3><ul class="footer-links"><li><a href="#contacto">Comércio</a></li><li><a href="#contacto">Consultoria</a></li><li><a href="#contacto">Assistência Técnica</a></li><li><a href="#contacto">Logística</a></li></ul></div>
+      <div class="footer-col"><h3>Contacto</h3><p>Luanda, Angola</p><p><a href="tel:+244946445746">+244 946 445 746</a></p><p><a href="mailto:fortunatodacosta24@gmail.com">fortunatodacosta24@gmail.com</a></p></div>
+    </div>
+    <div class="container footer-bottom"><p>© <span id="year"></span> Fort_Campos. Todos os direitos reservados.</p><div class="legal"><a href="#contacto">Política de Privacidade</a><a href="#contacto">Termos de Serviço</a></div></div>
+  </footer>
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                aberto ? "true" : "false"
-            );
+  <a class="whatsapp-float" href="https://wa.me/244946445746?text=Olá%20FortCampos,%20vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." target="_blank" rel="noopener" aria-label="Falar com a FortCampos pelo WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.7 11.7 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L.2 24l6.5-1.7a11.8 11.8 0 0 0 5.4 1.3h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.3ZM12.2 21.5h-.1c-1.7 0-3.4-.5-4.8-1.4l-.3-.2-3.9 1 1-3.8-.2-.3a9.7 9.7 0 0 1-1.5-5.1C2.4 6.3 6.8 1.9 12.2 1.9c2.6 0 5 1 6.9 2.9s2.8 4.3 2.8 6.9c0 5.4-4.4 9.8-9.7 9.8Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-.9 1.2-.3.2-.6.1c-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.5 0-.6s-.7-1.7-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.2 3.3c.2.2 2.2 3.4 5.4 4.8.8.3 1.4.5 1.9.6.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.3.3-.7.3-1.2.2-1.3-.1-.2-.3-.3-.6-.5Z"/></svg></a>
+  <button class="back-top" id="backTop" type="button" aria-label="Voltar ao topo">↑</button>
 
-            menuToggle.setAttribute(
-                "aria-label",
-                aberto ? "Fechar menu" : "Abrir menu"
-            );
-
-        });
-
-
-        /* Fecha o menu ao clicar numa opção */
-
-        menuLinks.forEach(function (link) {
-
-            link.addEventListener("click", fecharMenu);
-
-        });
-
-
-        /* =====================================================
-           FORMULÁRIO
-           Abre o WhatsApp com os dados preenchidos
-        ====================================================== */
-
-        const contactForm =
-            document.getElementById("contactForm");
-
-
-        contactForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const nome =
-                document.getElementById("nome").value.trim();
-
-            const email =
-                document.getElementById("email").value.trim();
-
-            const telefone =
-                document.getElementById("telefone").value.trim();
-
-            const servico =
-                document.getElementById("servico").value;
-
-            const mensagem =
-                document.getElementById("mensagem").value.trim();
-
-
-            if (!nome || !email || !mensagem) {
-
-                alert(
-                    "Por favor, preencha todos os campos obrigatórios."
-                );
-
-                return;
-            }
-
-
-            const textoWhatsApp =
-                `Olá! Gostaria de solicitar informações à Fort_Campos.
-
-*Nome:* ${nome}
-*Email:* ${email}
-*Telefone:* ${telefone || "Não informado"}
-*Serviço:* ${servico || "Não selecionado"}
-
-*Mensagem:*
-${mensagem}`;
-
-
-            const numeroWhatsApp = "946445746";
-
-            const urlWhatsApp =
-                `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoWhatsApp)}`;
-
-
-            window.open(
-                urlWhatsApp,
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-        });
-
-    </script>
-
+  <script>
+    const menuToggle=document.getElementById('menuToggle');
+    const navMenu=document.getElementById('navMenu');
+    const body=document.body;
+    menuToggle.addEventListener('click',()=>{const open=navMenu.classList.toggle('active');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu');menuToggle.textContent=open?'×':'☰';body.classList.toggle('menu-open',open)});
+    document.querySelectorAll('#navMenu a').forEach(link=>link.addEventListener('click',()=>{navMenu.classList.remove('active');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Abrir menu');menuToggle.textContent='☰';body.classList.remove('menu-open')}));
+    const sections=[...document.querySelectorAll('main section[id]')];const navLinks=[...document.querySelectorAll('.nav-list a[href^="#"]')];
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id))}}),{rootMargin:'-35% 0px -55% 0px'});sections.forEach(s=>observer.observe(s));
+    document.querySelectorAll('.faq-question').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.parentElement;document.querySelectorAll('.faq-item.open').forEach(other=>{if(other!==item)other.classList.remove('open')});item.classList.toggle('open')}));
+    document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{const service=link.dataset.service;document.getElementById('servico').value=service}));
+    document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const nome=document.getElementById('nome').value.trim();const telefone=document.getElementById('telefone').value.trim();const email=document.getElementById('email').value.trim();const servico=document.getElementById('servico').value;const mensagem=document.getElementById('mensagem').value.trim();const text=`Olá FortCampos!%0A%0A*Novo pedido pelo site*%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*Telefone:* ${encodeURIComponent(telefone)}%0A*E-mail:* ${encodeURIComponent(email||'Não informado')}%0A*Serviço:* ${encodeURIComponent(servico||'Não especificado')}%0A*Mensagem:* ${encodeURIComponent(mensagem)}`;document.getElementById('formSuccess').style.display='block';window.open(`https://wa.me/244946445746?text=${text}`,'_blank','noopener');});
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const backTop=document.getElementById('backTop');window.addEventListener('scroll',()=>backTop.classList.toggle('show',window.scrollY>500));backTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
 </body>
 </html>
